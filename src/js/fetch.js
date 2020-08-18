@@ -1,9 +1,8 @@
 const apiKey = '17952802-daa7906d75026c0e61ecd1623';
 
 function fetchHits(searchQuery) {
-  // let pageNum;
-  // &page=${pageNum}
-  const url = `https://pixabay.com/api/?image_type=photo&orientation=horizontal&q=${searchQuery}&per_page=12&key=${apiKey}`;
+  let page = 1;
+  const url = `https://pixabay.com/api/?image_type=photo&orientation=horizontal&q=${searchQuery}&page=${page}&per_page=12&key=${apiKey}`;
 
   return fetch(url)
     .then(res => res.json())

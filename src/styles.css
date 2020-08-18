@@ -23,6 +23,33 @@ ul {
   list-style: none;
 }
 
-/* .photo-card {
+.stats {
   display: flex;
-} */
+  justify-items: space-around;
+}
+
+.gallery {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  margin: -15px;
+  padding: 30px;
+}
+
+.photo-card {
+  width: calc(100% / 4);
+  padding: 15px;
+}
+
+.stats-item {
+  margin: 10px;
+}
+
+.material-icons {
+  vertical-align: middle;
+}
+
+input:focus::-webkit-input-placeholder {
+  text-indent: 500px;
+  transition: text-indent 0.3s ease;
+}
