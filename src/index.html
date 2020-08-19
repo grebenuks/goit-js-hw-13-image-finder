@@ -8,13 +8,14 @@
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet"
     />
+
     <title>js-task-module13</title>
   </head>
-
   <body>
     <form class="search-form" id="search-form">
       <h1 class="title">Введите название картинки</h1>
       <input
+        class="input"
         type="text"
         name="query"
         autocomplete="off"
@@ -22,7 +23,9 @@
       />
     </form>
     <ul class="gallery"></ul>
-    <button class="morePic" next-page>Даёшь еще картинок!</button>
+    <button type="button" class="is-hidden" id="morePic">
+      Даёшь еще картинок!
+    </button>
     <script src="./index.js" type="module"></script>
   </body>
 </html>

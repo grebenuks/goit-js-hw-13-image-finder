@@ -1,29 +1,32 @@
-// export default {
-//   _page: 1,
-//   _query: 'pen',
-//   _myKey: '17697395-d82fa808be968b3a5a71f0627',
-//   getImages() {
-//     const url = `https://pixabay.com/api/?image_type=photo&orientation=horizontal&q=${this.query}&page=${this._page}&per_page=12&key=${this._myKey}`;
-//     return fetch(url)
-//       .then(res => res.json())
-//       .then(({ hits }) => {
-//         this.incrementPage();
-//         return hits;
-//       });
-//   },
-//   some(text) {
-//     console.log(text);
-//   },
-//   get query() {
-//     return this._query;
-//   },
-//   set query(value) {
-//     this._query = value;
-//   },
-//   resetPage() {
-//     this._page = 1;
-//   },
-//   incrementPage() {
-//     this._page++;
-//   },
-// };
+import refs from './refs';
+
+const apiKey = '17952802-daa7906d75026c0e61ecd1623';
+const baseUrl = 'https://pixabay.com/api/';
+
+export default {
+  page: 1,
+  query: '',
+
+  fetchHits() {
+    const url = `?image_type=photo&orientation=horizontal&q=${this.query}&page=${this.page}&per_page=12&key=${apiKey}`;
+    return fetch(baseUrl + url)
+      .then(res => res.json())
+      .then(parsedResponse => {
+        this.incrementPage();
+        return parsedResponse.hits;
+      });
+  },
+  get searchQuery() {
+    return this.query;
+  },
+  set searchQuery(string) {
+    this.query = string;
+  },
+  incrementPage() {
+    this.page += 1;
+    refs.morePicBtn.classList.remove('is-hidden');
+  },
+  resetPage() {
+    this.page = 1;
+  },
+};
