@@ -21,6 +21,8 @@ function handlerInput(e) {
   apiService.searchQuery = input.value;
   apiService.fetchHits().then(insertListImages);
   input.value = '';
+  
+  refs.morePicBtn.classList.remove('is-hidden');
 }
 
 function loadMorePicFn() {
