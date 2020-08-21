@@ -24,7 +24,6 @@ export default {
   },
   incrementPage() {
     this.page += 1;
-    refs.morePicBtn.classList.remove('is-hidden');
   },
   resetPage() {
     this.page = 1;
